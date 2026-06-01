@@ -1,28 +1,37 @@
-let newX = 0, newY = 0, startX = 0, startY = 0;
+let currentCard = null;
+let startX = 0;
+let startY = 0;
 
-const card = document.getElementById('card')
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousedown', mouseDown);
+});
 
-card.addEventListener('mousedown', mouseDown)
+function mouseDown(e) {
+    currentCard = e.currentTarget;
 
-function mouseDown(e){
-    startX = e.clientX
-    startY = e.clientY
+    startX = e.clientX;
+    startY = e.clientY;
 
-    document.addEventListener('mousemove', mouseMove)
-    document.addEventListener('mouseup', mouseUp)
+    document.addEventListener('mousemove', mouseMove);
+    document.addEventListener('mouseup', mouseUp);
 }
 
-function mouseMove(e){
-    newX = startX - e.clientX 
-    newY = startY - e.clientY 
-  
-    startX = e.clientX
-    startY = e.clientY
+function mouseMove(e) {
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
 
-    card.style.top = (card.offsetTop - newY) + 'px'
-    card.style.left = (card.offsetLeft - newX) + 'px'
+    currentCard.style.left =
+        (currentCard.offsetLeft + dx) + 'px';
+
+    currentCard.style.top =
+        (currentCard.offsetTop + dy) + 'px';
+
+    startX = e.clientX;
+    startY = e.clientY;
 }
 
-function mouseUp(e){
-    document.removeEventListener('mousemove', mouseMove)
+function mouseUp() {
+    document.removeEventListener('mousemove', mouseMove);
+    document.removeEventListener('mouseup', mouseUp);
+    currentCard = null;
 }
