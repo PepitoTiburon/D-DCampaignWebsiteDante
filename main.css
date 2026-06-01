@@ -60,3 +60,9 @@ h3{
     background-color: #FFC8DA;
     background-image: url('img/HeroQuest.png');
 }
+.card:nth-child(4){
+    left: 830px;
+    top: 20px; /* card.height +20 for every new card downwards*/
+    background-color: #FFC8DA;
+    background-image: url('img/HeroQuest.png');
+}
