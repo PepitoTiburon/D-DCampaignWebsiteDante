@@ -35,3 +35,4 @@ function mouseUp() {
     document.removeEventListener('mouseup', mouseUp);
     currentCard = null;
 }
+
