@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<HTML>
+    <head> 
+        <!--<meta http-equiv="refresh" content="50"> -->
+        <meta charset=utf-8>
+        <meta http-equiv='X-UA-Compatible' content='IE-edge'>
+        <title>Mercenary Quest Board</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" type="text/css" href="MercenaryQB.css"/>
+    </head>
+    <body> 
+        
+        <div id="container">
+            <div class="card">
+                <h1>Revivir un cadaver</h1>
+                <p>una señora me insulto hace poco por mi olor y esto me ofendio mucho asi que
+                    revivi a su abuela, pero unos heroes la mataron, sigo molesto por lo que hizo
+                    asi que me gustaria si alguien la vuelve a revivir
+                </p>
+                <h4>Recursos: pergamino de alzar zombie</h4>
+                <h3>RECOMPENSA: 120 de oro</h3>
+            </div>
+
+            <div class="card">
+                <h1>crear un objeto magico</h1>
+                <p>hay un artifice que pasara mañana por la tarde por el pueblo, necesito que refuerze mi espada con magia, yo me encargo de la paga
+                </p>
+                <h4>Recursos: Espada larga</h4>
+                <h3>RECOMPENSA: Carta magica de Identificar <hr>(1/27 cartas)</h3>
+            </div>
+            <div class="UI">
+                <H3>Misiones Cumplidas:</H3>
+                <hr>
+            </div>
+            <button id="KickCat">Volver Arriba</button>
+
+            <script>
+                const audio = new Audio("Audios/CatHurt.mp3");
+
+                document.getElementById("KickCat").addEventListener("click", () => {
+                    window.location.href = "index.html";
+                });
+            </script>
+        </div>
+        
+    </body>
+    <script src='main.js'></script>
+</HTML>
